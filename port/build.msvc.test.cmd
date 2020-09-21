@@ -3,7 +3,7 @@ rem Public domain
 rem http://unlicense.org/
 rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
-echo -^> test quantum-script-extension-test
+echo -^> test quantum-script-extension-csv
 
 goto StepX
 :cmdX
