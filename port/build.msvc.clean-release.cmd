@@ -3,6 +3,6 @@ rem Public domain
 rem http://unlicense.org/
 rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
-echo -^> clean-local-release quantum-script-extension-csv
+echo -^> clean-release quantum-script-extension-csv
 
 if exist release\ rmdir /Q /S release
