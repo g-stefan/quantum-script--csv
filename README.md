@@ -1,8 +1,10 @@
 # Quantum Script Extension CSV
 
-CSV;\
-CSV.decode(str);\
+```javascript
+CSV;
+CSV.decode(str);
 CSV.encode(value);
+```
 
 ## License
 
