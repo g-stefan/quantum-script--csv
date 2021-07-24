@@ -43,7 +43,7 @@ namespace Quantum {
 					ln = 0;
 					for(k = 0; k < in.length(); ++k) {
 						if(in[k] == ',') {
-							(out->operatorIndex(ln))=VariableString::newVariable(out_);
+							out->setPropertyByIndex(ln,VariableString::newVariable(out_));
 							ln++;
 							out_ = "";
 							continue;
@@ -67,7 +67,7 @@ namespace Quantum {
 						};
 						out_ << in[k];
 					};
-					(out->operatorIndex(ln))=VariableString::newVariable(out_);
+					out->setPropertyByIndex(ln,VariableString::newVariable(out_));
 
 					return out;
 				};
@@ -84,7 +84,7 @@ namespace Quantum {
 					bool useComa;
 					bool useEscape;
 
-					if(!VariableArray::isVariableArray(in)) {
+					if(!TIsType<VariableArray>(in)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -97,7 +97,7 @@ namespace Quantum {
 							out << ',';
 						};
 						useEscape = false;
-						out_ = (in->operatorIndex(k))->toString();
+						out_ = (in->getPropertyByIndex(k))->toString();
 						if(String::indexOf(out_, " ", 0, sz)) {
 							useEscape = true;
 						};
