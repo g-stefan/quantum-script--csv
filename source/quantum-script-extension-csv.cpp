@@ -14,7 +14,7 @@
 #include "quantum-script-extension-csv-license.hpp"
 #include "quantum-script-extension-csv.hpp"
 #ifndef QUANTUM_SCRIPT_EXTENSION_CSV_NO_VERSION
-#include "quantum-script-extension-csv-version.hpp"
+#	include "quantum-script-extension-csv-version.hpp"
 #endif
 
 #include "quantum-script-variablestring.hpp"
@@ -41,19 +41,19 @@ namespace Quantum {
 
 					out_ = "";
 					ln = 0;
-					for(k = 0; k < in.length(); ++k) {
-						if(in[k] == ',') {
-							out->setPropertyByIndex(ln,VariableString::newVariable(out_));
+					for (k = 0; k < in.length(); ++k) {
+						if (in[k] == ',') {
+							out->setPropertyByIndex(ln, VariableString::newVariable(out_));
 							ln++;
 							out_ = "";
 							continue;
 						};
-						if(in[k] == '\"') {
+						if (in[k] == '\"') {
 							++k;
-							for(; k < in.length(); ++k) {
-								if(in[k] == '\"') {
-									if(k + 1 < in.length()) {
-										if(in[k + 1] == '\"') {
+							for (; k < in.length(); ++k) {
+								if (in[k] == '\"') {
+									if (k + 1 < in.length()) {
+										if (in[k + 1] == '\"') {
 											out_ << '\"';
 											++k;
 											continue;
@@ -67,7 +67,7 @@ namespace Quantum {
 						};
 						out_ << in[k];
 					};
-					out->setPropertyByIndex(ln,VariableString::newVariable(out_));
+					out->setPropertyByIndex(ln, VariableString::newVariable(out_));
 
 					return out;
 				};
@@ -84,7 +84,7 @@ namespace Quantum {
 					bool useComa;
 					bool useEscape;
 
-					if(!TIsType<VariableArray>(in)) {
+					if (!TIsType<VariableArray>(in)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -92,30 +92,30 @@ namespace Quantum {
 					size_t sz;
 
 					useComa = false;
-					for(k = 0; k < ((VariableArray *)in)->value->length(); ++k) {
-						if(useComa) {
+					for (k = 0; k < ((VariableArray *)in)->value->length(); ++k) {
+						if (useComa) {
 							out << ',';
 						};
 						useEscape = false;
 						out_ = (in->getPropertyByIndex(k))->toString();
-						if(String::indexOf(out_, " ", 0, sz)) {
+						if (String::indexOf(out_, " ", 0, sz)) {
 							useEscape = true;
 						};
-						if(String::indexOf(out_, "\t", 0, sz)) {
+						if (String::indexOf(out_, "\t", 0, sz)) {
 							useEscape = true;
 						};
-						if(String::indexOf(out_, ",", 0, sz)) {
+						if (String::indexOf(out_, ",", 0, sz)) {
 							useEscape = true;
 						};
-						if(String::indexOf(out_, "\"", 0, sz)) {
+						if (String::indexOf(out_, "\"", 0, sz)) {
 							useEscape = true;
 							out_ = String::replace(out_, "\"", "\"\"");
 						};
-						if(useEscape) {
+						if (useEscape) {
 							out << '"';
 						};
 						out << out_;
-						if(useEscape) {
+						if (useEscape) {
 							out << '"';
 						};
 						useComa = true;
@@ -155,4 +155,3 @@ extern "C" QUANTUM_SCRIPT_EXTENSION_CSV_EXPORT void quantumScriptExtension(Quant
 	Quantum::Script::Extension::CSV::initExecutive(executive, extensionId);
 };
 #endif
-
