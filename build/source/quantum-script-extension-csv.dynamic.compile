@@ -1,8 +1,0 @@
---dll qse-csv
---project-base=quantum-script-extension-csv
---build-include
---dll-no-version
---use-project=quantum-script
---install-dev
---install-inc=quantum-script-extension
---no-version

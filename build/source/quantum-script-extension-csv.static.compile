@@ -1,6 +1,0 @@
---lib qse-csv
---project-base=quantum-script-extension-csv
---build-include
---use-project=quantum-script.static
---install-dev
---install-inc=quantum-script-extension

@@ -1,0 +1,16 @@
+{
+	"project": {
+		"name":"quantum-script--csv",
+		"type":"xyo-cpp-project",
+		"make" : "lib-and-dll",
+		"SPDX-License-Identifier": "MIT",
+		"sourcePath" : "XYO/QuantumScript.Extension/CSV",
+		"testSource" : [
+			"test.01"
+		],
+		"dependency" : [
+			"quantum-script",
+			"quantum-script--console"
+		]
+	}
+}

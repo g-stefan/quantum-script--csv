@@ -1,0 +1,11 @@
+// Quantum Script Extension CSV
+// Copyright (c) 2022 Grigore Stefan <g_stefan@yahoo.com>
+// MIT License (MIT) <http://opensource.org/licenses/MIT>
+// SPDX-FileCopyrightText: 2022 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-License-Identifier: MIT
+
+#include <XYO/QuantumScript.Extension/CSV/Library.rh>
+#include <XYO/QuantumScript.Extension/CSV/Copyright.rh>
+#include <XYO/QuantumScript.Extension/CSV/Version.rh>
+
+XYO_APPLICATION_VERSION_INFO(XYO_QUANTUMSCRIPT_EXTENSION_CSV,"quantum-script--csv.dll","Quantum Script Extension CSV")
