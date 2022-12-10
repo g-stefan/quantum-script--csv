@@ -16,7 +16,6 @@ namespace XYO::QuantumScript::Extension::CSV::Copyright {
 	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT const char *publisher();
 	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT const char *company();
 	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT const char *contact();
-	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT const char *fullCopyright();
 };
 
 #endif
