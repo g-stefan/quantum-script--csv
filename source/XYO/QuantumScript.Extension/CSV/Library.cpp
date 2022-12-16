@@ -12,7 +12,7 @@
 namespace XYO::QuantumScript::Extension::CSV {
 
 	static TPointer<Variable> decode(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- csv-decode\n");
 #endif
 		String in = (arguments->index(0))->toString();
@@ -55,7 +55,7 @@ namespace XYO::QuantumScript::Extension::CSV {
 	};
 
 	static TPointer<Variable> encode(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- csv-encode\n");
 #endif
 
