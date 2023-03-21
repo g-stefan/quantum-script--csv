@@ -113,7 +113,7 @@ namespace XYO::QuantumScript::Extension::CSV {
 	void initExecutive(Executive *executive, void *extensionId) {
 
 		String info = "CSV\r\n";
-		info << License::shortLicense();
+		info << License::shortLicense().c_str();
 
 		executive->setExtensionName(extensionId, "CSV");
 		executive->setExtensionInfo(extensionId, info);

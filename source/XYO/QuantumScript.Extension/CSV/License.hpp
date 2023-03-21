@@ -13,8 +13,8 @@
 
 namespace XYO::QuantumScript::Extension::CSV::License {
 
-	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT const char *license();
-	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT const char *shortLicense();
+	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT std::string license();
+	XYO_QUANTUMSCRIPT_EXTENSION_CSV_EXPORT std::string shortLicense();
 
 };
 
