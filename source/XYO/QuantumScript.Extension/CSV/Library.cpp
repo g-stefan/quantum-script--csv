@@ -80,18 +80,18 @@ namespace XYO::QuantumScript::Extension::CSV {
 			};
 			useEscape = false;
 			out_ = (in->getPropertyByIndex(k))->toString();
-			if (StringX::indexOf(out_, " ", 0, sz)) {
+			if (out_.indexOf( " ", 0, sz)) {
 				useEscape = true;
 			};
-			if (StringX::indexOf(out_, "\t", 0, sz)) {
+			if (out_.indexOf( "\t", 0, sz)) {
 				useEscape = true;
 			};
-			if (StringX::indexOf(out_, ",", 0, sz)) {
+			if (out_.indexOf( ",", 0, sz)) {
 				useEscape = true;
 			};
-			if (StringX::indexOf(out_, "\"", 0, sz)) {
+			if (out_.indexOf( "\"", 0, sz)) {
 				useEscape = true;
-				out_ = StringX::replace(out_, "\"", "\"\"");
+				out_ = out_.replace( "\"", "\"\"");
 			};
 			if (useEscape) {
 				out << '"';
