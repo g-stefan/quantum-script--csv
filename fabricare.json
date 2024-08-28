@@ -5,7 +5,7 @@
 		"projects": [
 			{
 				"name" : "quantum-script--csv",
-				"make" : "lib-and-dll",
+				"make" : "dll-or-lib",
 				"SPDX-License-Identifier": "MIT",
 				"sourcePath" : "XYO/QuantumScript.Extension/CSV",
 				"dependency" : [
@@ -15,7 +15,7 @@
 			},
 			{
 				"name" : "test.01",
-				"make" : "exe.static",
+				"make" : "exe",
 				"category" : "test",
 				"SPDX-License-Identifier": "Unlicense",
 				"dependency" : [
