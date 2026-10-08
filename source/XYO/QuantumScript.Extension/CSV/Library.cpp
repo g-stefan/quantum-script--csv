@@ -20,10 +20,21 @@ namespace XYO::QuantumScript::Extension::CSV {
 		String out_;
 		size_t k;
 		size_t ln;
+		size_t end;
+
+		// ignore the line terminator (\n, \r\n, \r)
+		end = in.length();
+		while (end > 0) {
+			if ((in[end - 1] == '\r') || (in[end - 1] == '\n')) {
+				--end;
+				continue;
+			};
+			break;
+		};
 
 		out_ = "";
 		ln = 0;
-		for (k = 0; k < in.length(); ++k) {
+		for (k = 0; k < end; ++k) {
 			if (in[k] == ',') {
 				out->setPropertyByIndex(ln, VariableString::newVariable(out_));
 				ln++;
@@ -32,9 +43,9 @@ namespace XYO::QuantumScript::Extension::CSV {
 			};
 			if (in[k] == '\"') {
 				++k;
-				for (; k < in.length(); ++k) {
+				for (; k < end; ++k) {
 					if (in[k] == '\"') {
-						if (k + 1 < in.length()) {
+						if (k + 1 < end) {
 							if (in[k + 1] == '\"') {
 								out_ << '\"';
 								++k;
@@ -87,6 +98,12 @@ namespace XYO::QuantumScript::Extension::CSV {
 				useEscape = true;
 			};
 			if (out_.indexOf(",", 0, sz)) {
+				useEscape = true;
+			};
+			if (out_.indexOf("\r", 0, sz)) {
+				useEscape = true;
+			};
+			if (out_.indexOf("\n", 0, sz)) {
 				useEscape = true;
 			};
 			if (out_.indexOf("\"", 0, sz)) {
