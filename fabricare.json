@@ -1,6 +1,5 @@
 {
 	"solution": {
-		"namespace" : "xyo",
 		"name" : "quantum-script--csv",
 		"type" : "xyo-cpp",
 		"projects": [
